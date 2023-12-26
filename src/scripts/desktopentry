@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=SilentDragon
+Comment=Full node and wallet for Hush
+GenericName=Wallet
+Exec=/usr/local/bin/silentdragon %u
+Icon=silentdragon.xpm
+Type=Application
+StartupNotify=true
+StartupWMClass=silentdragon
+Categories=Utility;
+MimeType=x-scheme-handler/hush;
+Keywords=silentdragon;
+

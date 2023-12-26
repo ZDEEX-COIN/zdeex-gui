@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Name='SilentZdeeX' Id='c2083d6a-4511-4c37-b23c-6699badb781f' UpgradeCode='0877ea1a-0662-48a2-8512-b5868f0a40a6'
+    Language='1033' Codepage='1252' Version='1.3.1' Manufacturer='HUSH'>
+
+    <Package Id='*' Keywords='Installer' Description="HUSH SilentZdeeX Installer"
+      Comments='' Manufacturer='HUSH'
+      InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Media Id='1' Cabinet='SilentZdeeX.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+    <Property Id='DiskPrompt' Value="HUSH SilentZdeeX 1.3.1 Installation [1]" />
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='HUSH' Name='HUSH'>
+          <Directory Id='INSTALLDIR' Name='SilentZdeeX'>
+            <Component Id='MainExecutable' Guid='e96fa770-8ac4-4e69-85b0-1d5b97d658f1'>
+              <File Id='SilentZdeeXEXE' Name='silentzdeex.exe' DiskId='1' Source='silentzdeex.exe' KeyPath='yes'>
+                <Shortcut Id="startmenuSilentZdeeX" Directory="ProgramMenuDir" Name="SilentZdeeX" WorkingDirectory='INSTALLDIR' Icon="silentzdeex.exe" IconIndex="0" Advertise="yes" />
+                <Shortcut Id="desktopSilentZdeeX" Directory="DesktopFolder" Name="SilentZdeeX" WorkingDirectory='INSTALLDIR' Icon="silentzdeex.exe" IconIndex="0" Advertise="yes" />
+              </File>
+            </Component>
+            <Component Id="asmap" Guid="1e7a811c-6076-4046-b592-3aebf31961c4">
+                <File Id="asmap.dat" DiskId='1' Source="asmap.dat" KeyPath="yes"/>
+            </Component>
+            <Component Id="zdeex-cli" Guid="5b648615-b957-470e-9ec0-777b8896e913">
+                <File Id="zdeex-cli.bat" DiskId='1' Source="zdeex-cli.bat" KeyPath="yes"/>
+            </Component>
+            <Component Id="zdeexd" Guid="779810d3-b092-4349-940b-03ba73ec556d">
+                <File Id="zdeexd.bat" DiskId='1' Source="zdeexd.bat" KeyPath="yes"/>
+            </Component>
+            <Component Id="hush-cli" Guid="305d8117-5685-4d06-b0be-a7cd176f8111">
+                <File Id="hush-cli.exe" DiskId='1' Source="hush-cli.exe" KeyPath="yes"/>
+            </Component>
+            <Component Id="hushd" Guid="5024eceb-fba3-48d8-9ab5-e61ae5c1964d">
+                <File Id="hushd.exe" DiskId='1' Source="hushd.exe" KeyPath="yes"/>
+            </Component>
+            <Component Id="hush-smart-chain" Guid="c66ffa5c-02ae-42e0-bbca-8cc71a4e92e9">
+                <File Id="hush-smart-chain.bat" DiskId='1' Source="hush-smart-chain.bat" KeyPath="yes"/>
+            </Component>
+            <Component Id="hush-tx" Guid="7baac56a-8bf4-4bb2-b97d-a59da5c0edd6">
+                <File Id="hush-tx.exe" DiskId='1' Source="hush-tx.exe" KeyPath="yes"/>
+            </Component>
+            <Component Id="readme" Guid="5edea091-83d0-4f1c-a84f-298e4e8e61e9">
+                <File Id="README.txt" DiskId='1' Source="README.txt" KeyPath="yes"/>
+            </Component>
+            <Component Id="sapling-output" Guid="dddc6a47-8a26-49ec-b5a8-e38a06e11000">
+                <File Id="sapling-output.params" DiskId='1' Source="sapling-output.params" KeyPath="yes"/>
+            </Component>
+            <Component Id="sapling-spend" Guid="42edd54d-b480-4aaa-a976-ec305127dbbb">
+                <File Id="sapling-spend.params" DiskId='1' Source="sapling-spend.params" KeyPath="yes"/>
+            </Component>	
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="SilentZdeeX">
+          <Component Id="ProgramMenuDir" Guid="2ac41712-9a5d-48d6-9ca9-fe31bad57153">
+            <RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+            <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+
+    <Feature Id='Complete' Level='1'>
+      <ComponentRef Id='MainExecutable' />
+      <ComponentRef Id='ProgramMenuDir' />
+      <ComponentRef Id='asmap' />
+      <ComponentRef Id='zdeex-cli' />
+      <ComponentRef Id='zdeexd' />
+      <ComponentRef Id='hush-cli' />
+      <ComponentRef Id='hushd' />
+      <ComponentRef Id='hush-smart-chain' />
+      <ComponentRef Id='hush-tx' />
+      <ComponentRef Id='readme' />
+      <ComponentRef Id='sapling-output' />
+      <ComponentRef Id='sapling-spend' />
+    </Feature>
+
+    <Icon Id="silentzdeex.exe" SourceFile="silentzdeex.ico" />
+
+  </Product>
+</Wix>

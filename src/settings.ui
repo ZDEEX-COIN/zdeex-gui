@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Settings</class>
+ <widget class="QDialog" name="Settings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>623</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>540</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>hushd connection</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="confMsg">
+         <property name="text">
+          <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Host</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="hostname">
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Port</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="port">
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>RPC Username</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="rpcuser"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>RPC Password</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="rpcpassword"/>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2"/>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Options</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" colspan="3">
+        <widget class="QCheckBox" name="chkSaveTxs">
+         <property name="text">
+          <string>Remember shielded transactions</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="5">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Shielded transactions are saved locally and shown in the transactions tab.  If you uncheck this, shielded transactions will not appear in the transactions tab.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="btnClearSaved">
+         <property name="text">
+          <string>Clear History</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QCheckBox" name="chkCustomFees">
+         <property name="text">
+          <string>Allow custom fees</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="6">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Allow overriding the default fees when sending transactions. Enabling this option may compromise your privacy since fees are transparent. </string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="5">
+        <widget class="QCheckBox" name="chkAutoShield">
+         <property name="text">
+          <string>Shield change from t-Addresses to your sapling address</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="6">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Normally, change from t-Addresses goes to another t-Address. Checking this option will send the change to your shielded sapling address instead. Check this option to increase your privacy.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="3">
+        <widget class="QCheckBox" name="chkTor">
+         <property name="text">
+          <string>Connect via Tor</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="6">
+        <widget class="QLabel" name="lblTor">
+         <property name="text">
+          <string>Connect to the Tor network via SOCKS proxy, which runs on 127.0.0.1:9050 by default or 127.0.0.1:9150 for Tor Browser. Please note that you'll have to install and run the Tor service externally.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_tor_proxy">
+         <property name="text">
+          <string>Proxy IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QLineEdit" name="torProxy">
+         <property name="text">
+          <string notr="true">127.0.0.1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="3">
+        <widget class="QLabel" name="label_tor_port">
+         <property name="text">
+          <string>Tor Port</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="4">
+        <widget class="QLineEdit" name="torPort">
+         <property name="text">
+          <string notr="true">9050</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="6">
+        <widget class="QCheckBox" name="chkCheckUpdates">
+         <property name="text">
+          <string>Connect to git.hush.is on startup to check for updates</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="6">
+        <widget class="QCheckBox" name="chkFetchPrices">
+         <property name="text">
+          <string>Connect to the internet to fetch prices</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QComboBox" name="comboBoxTheme">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string notr="true">default</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string notr="true">blue</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string notr="true">light</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string notr="true">dark</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string notr="true">midnight</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>zdeex</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QLabel" name="label_201">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Local Currency</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2">
+        <widget class="QComboBox" name="comboBoxCurrency">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>AED</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ARS</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>AUD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>BDT</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>BHD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>BMD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>BRL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>BTC</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CAD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CHF</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CLP</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CNY</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CZK</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>DKK</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>EUR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GBP</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HKD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HUF</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>IDR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ILS</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>INR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>JPY</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KRW</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KWD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>LKR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>PKR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MXN</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>NOK</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>NZD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>RUB</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SAR</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SEK</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SGD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>THB</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>TRY</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>TWD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UAH</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>USD</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>VEF</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>VND</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>XAG</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>XAU</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ZAR</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="13" column="0" colspan="2">
+        <widget class="QLabel" name="langlabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Language</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QComboBox" name="comboBoxLanguage">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <widget class="QLabel" name="label_20">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Theme</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Explorer</string>
+      </attribute>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>491</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tx Explorer URL</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_5">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>105</y>
+         <width>491</width>
+         <height>3</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txExplorerUrl">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>28</y>
+         <width>491</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">https://explorer.hush.is/tx/</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>54</y>
+         <width>491</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Address Explorer URL</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="addressExplorerUrl">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>73</y>
+         <width>491</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">https://explorer.hush.is/address/</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>112</y>
+         <width>491</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Onion Tx Explorer URL</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="onionTxExplorerUrl">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>131</y>
+         <width>491</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">http://jlqhwhak65kokg3pdjp3ufy6almf5spnhsfnugtjsc4z7wtapgozxyad.onion/tx/</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>160</y>
+         <width>501</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Onion Address Explorer URL</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="onionAddressExplorerUrl">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>180</y>
+         <width>491</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">http://jlqhwhak65kokg3pdjp3ufy6almf5spnhsfnugtjsc4z7wtapgozxyad.onion/tx/</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <attribute name="title">
+       <string>Troubleshooting</string>
+      </attribute>
+      <widget class="QCheckBox" name="chkReindex">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>118</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Reindex</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>583</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. Click rescan to enter block height to rescan from. This may take several hours depending on submitted block height.</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>102</y>
+         <width>583</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>95</y>
+         <width>16</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>147</y>
+         <width>583</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart SilentDragon for this to take effect</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>210</y>
+         <width>583</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>204</y>
+         <width>16</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>583</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>This code can greatly reduce the size of wallets and increase performance for service providers. It's designed mostly for exchanges and mining pools but anybody with a large wallet will benefit.</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>369</y>
+         <width>583</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Enable Old Transaction Deletion</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="Line" name="line_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>324</y>
+         <width>583</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chkConso">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Consolidation</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chkDeletetx">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>340</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Deletetx</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>410</y>
+         <width>583</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>460</y>
+         <width>583</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>The new experimental Shielded Index (-zindex) which keeps track of many stats that can be seen via the new getchaintxstats RPC. These include shielded payments, anonymity set size and many other things.</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chkzindex">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>430</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Zindex </string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="WalletSize">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>550</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>100</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>550</y>
+         <width>111</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Wallet.dat Size :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>550</y>
+         <width>41</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MB</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="rescanButton">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>60</y>
+         <width>281</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="text">
+        <string>Rescan</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Settings</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Settings</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
