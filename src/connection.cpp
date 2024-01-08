@@ -254,8 +254,9 @@ void ConnectionLoader::createHushConf() {
     out << "addressindex=1\n";
     out << "spentindex=1\n";
     out << "timestampindex=1\n";
-    out << "rpcworkqueue=256\n";
+    out << "rpcworkqueue=3\n";
     out << "rpcallowip=127.0.0.1\n";
+    out << "bantime==100000000000000\n";
 
     // Consolidation is now defaulted to ON for new wallets
     out << "consolidation=1\n";
@@ -436,7 +437,7 @@ bool ConnectionLoader::startEmbeddedHushd() {
 
     // This string should be the exact arg list seperated by single spaces
     // Could be modified to start different Hush Smart Chains
-    QString params = "-tls=only -clientname=GoldenSandtrout"; // "-ac_name=TUSH";
+    QString params = "-tls=only -clientname=ZDEEX-GUI"; // "-ac_name=TUSH";
 
     /* This is now enabled by default in hushd
     // Binaries come with this file
@@ -449,7 +450,7 @@ bool ConnectionLoader::startEmbeddedHushd() {
     */
     if(iszdeex) {
         // zdeexd bash script cannot be used on windows, so specify exact chain params
-        params += " -ac_name=ZDEEX -ac_sapling=1 -ac_reward=200000000 -ac_blocktime=300 -ac_cc=2 -ac_founders=1 -ac_perc=10000000 -ac_halving=1000000 -ac_supply=100000 -ac_private=1 -addnode=node.zdeex.org -addnode=node1.zdeex.org -addnode=node2.zdeex.org -ac_pubkey=03abd1d20f8c7cf579d80788c1d4d23fcb10b04a4f01f43d2bf0aac6a51b05db0e";
+        params += " -ac_name=ZDEEX -ac_sapling=1 -ac_reward=200000000 -ac_blocktime=300 -ac_cc=2 -ac_founders=1 -ac_perc=10000000 -ac_halving=1000000 -ac_supply=100000 -ac_private=1 -connect=194.226.49.236 -addnode=89.23.106.224 -connect=89.108.115.67 -connect=193.17.92.111 -connect=194.226.49.236 -ac_pubkey=03abd1d20f8c7cf579d80788c1d4d23fcb10b04a4f01f43d2bf0aac6a51b05db0e";
     }
 
     QStringList arguments = params.split(" ");
